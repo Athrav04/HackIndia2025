@@ -245,7 +245,7 @@
                                 <p>${product.description}</p>
                                 <p><strong>Brand:</strong> ${product.brand}</p>
                                 <p class="price">$${product.price}</p>
-                                <a href="${product.url}" class="buy-button" target="_blank">View Product</a>
+                                <a href="http://localhost:3001/product/${product._id}" class="buy-button" target="_blank">View Product</a>
                             </div>
                         `;
                     } catch (error) {

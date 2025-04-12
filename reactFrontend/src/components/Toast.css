@@ -1,0 +1,21 @@
+.toast-notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  z-index: 1100;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  max-width: 300px;
+  font-weight: 500;
+}
+
+.toast-notification.show {
+  transform: translateY(0);
+  opacity: 1;
+} 

@@ -1,0 +1,148 @@
+/* Container & Overall Section */
+.about-section {
+    position: relative;
+    padding: 80px 0;
+    background: linear-gradient(135deg, #e0f7fa 0%, #a5d6a7 100%);
+    overflow: hidden;
+}
+
+.section-decorator.dots {
+    position: absolute;
+    top: 10%;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+    background-image: radial-gradient(#4caf50 20%, transparent 20%);
+    background-size: 20px 20px;
+    opacity: 0.3;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Headings & Content */
+.about-section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #2e7d32;
+    font-size: 2.8rem;
+    font-weight: bold;
+}
+
+.about-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-text {
+    max-width: 800px;
+    text-align: center;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    color: #444;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* Button Styling */
+.about-cta {
+    padding: 12px 24px;
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.about-cta:hover {
+    background-color: #43a047;
+}
+
+/* Animation Base & Utility */
+.animate {
+    opacity: 0;
+    /* Start hidden */
+    transform: translateY(30px);
+    /* Initial offset */
+    animation-fill-mode: forwards;
+}
+
+/* Fade-in Animations */
+.fadeInUp {
+    animation-name: fadeInUp;
+    animation-duration: 0.8s;
+    animation-delay: 0.2s;
+}
+
+.fadeInRight {
+    animation-name: fadeInRight;
+    animation-duration: 0.8s;
+    animation-delay: 0.2s;
+}
+
+/* Additional Delay Classes */
+.delay-1 {
+    animation-delay: 0.3s;
+}
+
+.delay-2 {
+    animation-delay: 0.5s;
+}
+
+.delay-3 {
+    animation-delay: 0.7s;
+}
+
+/* Keyframes for Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Trigger animations on load (or use JS scroll observers for on-scroll) */
+.about-section .animate {
+    animation-play-state: running;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .about-section {
+        padding: 60px 0;
+    }
+
+    .about-section h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+    }
+}

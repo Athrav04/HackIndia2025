@@ -12,7 +12,7 @@ const Testimonials = () => {
           <div className="testimonials-divider"></div>
           <p>
             Discover how our eco-friendly products have made a positive impact
-            on our customers' lives.
+            on our customers&apos; lives.
           </p>
         </div>
 
@@ -21,9 +21,9 @@ const Testimonials = () => {
             <div className="testimonial-content">
               <div className="quote-icon">❝</div>
               <p>
-                "I've switched all my kitchen essentials to eco-friendly
-                alternatives and couldn't be happier. The quality is exceptional
-                and I feel good about reducing my environmental footprint."
+                &quot;I&apos;ve switched all my kitchen essentials to eco-friendly
+                alternatives and couldn&apos;t be happier. The quality is exceptional
+                and I feel good about reducing my environmental footprint.&quot;
               </p>
             </div>
             <div className="testimonial-author">
@@ -42,9 +42,9 @@ const Testimonials = () => {
             <div className="testimonial-content">
               <div className="quote-icon">❝</div>
               <p>
-                "The eco-friendly kitchen set has transformed how I cook.
+                &quot;The eco-friendly kitchen set has transformed how I cook.
                 Everything is so durable and I feel good about reducing plastic
-                waste."
+                waste.&quot;
               </p>
             </div>
             <div className="testimonial-author">
@@ -63,8 +63,8 @@ const Testimonials = () => {
             <div className="testimonial-content">
               <div className="quote-icon">❝</div>
               <p>
-                "The plant-based cleaning supplies are gentle yet effective. My
-                home smells amazing without harsh chemicals!"
+                &quot;The plant-based cleaning supplies are gentle yet effective. My
+                home smells amazing without harsh chemicals!&quot;
               </p>
             </div>
             <div className="testimonial-author">

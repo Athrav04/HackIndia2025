@@ -1,16 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Testimonials from "../components/Testimonials";
-import BenefitsSection from "./BenefitsSection";
 import ProductCard from "../components/ProductCard";
-import AboutSection from "../components/AboutSection";
 import products from "../data";
 import "./HomePage.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import HeroScene from "../components/HeroScene";
-import EcoFacts from "../components/EcoFacts";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -26,8 +22,6 @@ function HomePage() {
   const mouseCursorRef = useRef(null);
   const mouseCursorDotRef = useRef(null);
   const scrollProgressRef = useRef(null);
-
-  // Track hero section loading state
   const [hero3DLoaded, setHero3DLoaded] = useState(false);
 
   // Handle 3D scene load completion
@@ -175,7 +169,8 @@ function HomePage() {
       { threshold: 0.1 }
     );
 
-    document.querySelectorAll(".animate").forEach((el) => {
+    const elements = document.querySelectorAll(".animate");
+    elements.forEach((el) => {
       observer.observe(el);
       observerRefs.current.push(el);
     });
@@ -183,14 +178,18 @@ function HomePage() {
     // Add scroll event for parallax
     window.addEventListener("scroll", handleScroll);
 
-    // Add click event to scroll indicator
-    if (scrollIndicatorRef.current) {
-      scrollIndicatorRef.current.addEventListener("click", () => {
-        window.scrollTo({
-          top: window.innerHeight,
-          behavior: "smooth",
-        });
+    // Define handleClick function
+    const handleClick = () => {
+      window.scrollTo({
+        top: window.innerHeight,
+        behavior: "smooth",
       });
+    };
+
+    // Add click event to scroll indicator
+    const scrollIndicator = scrollIndicatorRef.current;
+    if (scrollIndicator) {
+      scrollIndicator.addEventListener("click", handleClick);
     }
 
     // Animate sections on scroll
@@ -248,58 +247,6 @@ function HomePage() {
       });
     });
 
-    // Animate benefit cards with staggered appearance
-    gsap.from(".benefit-card", {
-      y: 50,
-      opacity: 0,
-      duration: 0.8,
-      stagger: 0.2,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: ".benefits-grid",
-        start: "top 75%",
-        toggleActions: "play none none reverse",
-      },
-    });
-
-    // Animate testimonial cards with staggered appearance
-    gsap.from(".testimonial", {
-      y: 50,
-      opacity: 0,
-      duration: 0.8,
-      stagger: 0.2,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: ".testimonials-grid",
-        start: "top 75%",
-        toggleActions: "play none none reverse",
-      },
-    });
-
-    // Product cards hover effect enhancement
-    const productCards = document.querySelectorAll(".products-grid > div");
-    productCards.forEach((card) => {
-      card.addEventListener("mouseenter", () => {
-        gsap.to(card, {
-          y: -15,
-          scale: 1.03,
-          boxShadow: "0 20px 30px rgba(0, 0, 0, 0.1)",
-          duration: 0.3,
-          ease: "power2.out",
-        });
-      });
-
-      card.addEventListener("mouseleave", () => {
-        gsap.to(card, {
-          y: 0,
-          scale: 1,
-          boxShadow: "0 10px 20px rgba(0, 0, 0, 0.05)",
-          duration: 0.5,
-          ease: "power2.inOut",
-        });
-      });
-    });
-
     // Mouse follow effect
     window.addEventListener("mousemove", handleMouseMove);
 
@@ -330,13 +277,13 @@ function HomePage() {
 
     // Cleanup
     return () => {
-      observerRefs.current.forEach((el) => {
+      elements.forEach((el) => {
         observer.unobserve(el);
       });
       window.removeEventListener("scroll", handleScroll);
 
-      if (scrollIndicatorRef.current) {
-        scrollIndicatorRef.current.removeEventListener("click", () => {});
+      if (scrollIndicator) {
+        scrollIndicator.removeEventListener("click", handleClick);
       }
 
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
@@ -368,7 +315,7 @@ function HomePage() {
           <HeroScene onLoad={handleHero3DLoaded} />
 
           {/* Hero content */}
-          <div className="hero-content" ref={heroContentRef}>
+          <div className="hero-content" ref={heroContentRef} style={{ visibility: hero3DLoaded ? 'visible' : 'hidden' }}>
             <h1 ref={heroTitleRef}>ECO-verse</h1>
             <p ref={heroSubtitleRef}>
               Sustainable living for a better tomorrow
@@ -429,121 +376,8 @@ function HomePage() {
           </div>
         </section>
 
-        <BenefitsSection />
-
-        <AboutSection />
-
-        <Testimonials />
-
-        <section id="contact" className="contact-section">
-          <div className="section-decorator circle-pattern"></div>
-          <div className="section-decorator wave"></div>
-          <div className="container">
-            <h2 className="animate fade-in-up">Get In Touch</h2>
-            <p className="animate fade-in-up delay-1">
-              Have questions about our products or sustainability practices?
-              We'd love to hear from you!
-            </p>
-            <div className="contact-content">
-              <div className="contact-form animate fade-in-left">
-                <form>
-                  <div className="form-group">
-                    <label htmlFor="name">Name</label>
-                    <input type="text" id="name" name="name" required />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <input type="email" id="email" name="email" required />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="subject">Subject</label>
-                    <input type="text" id="subject" name="subject" required />
-                  </div>
-                  <div className="form-group">
-                    <label htmlFor="message">Message</label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows="5"
-                      required
-                    ></textarea>
-                  </div>
-                  <button type="submit" className="submit-btn">
-                    Send Message
-                  </button>
-                </form>
-              </div>
-
-              <div className="contact-info animate fade-in-right">
-                <div className="info-item">
-                  <div className="info-icon">
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                      <circle cx="12" cy="10" r="3"></circle>
-                    </svg>
-                  </div>
-                  <div>
-                    <h4>Visit Us</h4>
-                    <p>
-                      123 Green Lane, Eco Park
-                      <br />
-                      Bangalore, Karnataka 560001
-                    </p>
-                  </div>
-                </div>
-
-                <div className="info-item">
-                  <div className="info-icon">
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                    </svg>
-                  </div>
-                  <div>
-                    <h4>Call Us</h4>
-                    <p>+91 98765 43210</p>
-                  </div>
-                </div>
-
-                <div className="info-item">
-                  <div className="info-icon">
-                    <svg
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                      <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                  </div>
-                  <div>
-                    <h4>Email Us</h4>
-                    <p>hello@eco-verse.com</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <Footer />
       </main>
-
-      <Footer />
     </div>
   );
 }

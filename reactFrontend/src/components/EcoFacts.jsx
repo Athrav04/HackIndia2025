@@ -54,21 +54,12 @@ export default function EcoFacts() {
   };
 
   useEffect(() => {
-    // Start adding facts periodically
-    timer.current = setInterval(() => {
-      if (visibleFacts.length < 3) {
-        // Limit to 3 facts at a time
-        addFact();
-      }
-    }, 6000); // Add a new fact every 6 seconds
+    const interval = setInterval(() => {
+      addFact();
+    }, 5000);
 
-    // Add first fact immediately
-    addFact();
-
-    return () => {
-      clearInterval(timer.current);
-    };
-  }, [visibleFacts]);
+    return () => clearInterval(interval);
+  }, [addFact]);
 
   useEffect(() => {
     // Animate each fact when it appears

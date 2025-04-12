@@ -75,7 +75,7 @@ function SearchResults() {
                 <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 <line x1="8" y1="11" x2="14" y2="11"></line>
               </svg>
-              <p>We couldn't find any products that match your search.</p>
+              <p>We couldn&apos;t find any products that match your search.</p>
               <div className="search-suggestions">
                 <h3>Suggestions:</h3>
                 <ul>

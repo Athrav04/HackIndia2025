@@ -10,7 +10,7 @@ function Footer() {
         <div className="footer-section about">
           <h3>About ECO-verse</h3>
           <p>
-            At ECO-verse, we're committed to providing sustainable, eco-friendly
+            At ECO-verse, we&apos;re committed to providing sustainable, eco-friendly
             products that help reduce environmental impact without compromising
             on quality or style.
           </p>

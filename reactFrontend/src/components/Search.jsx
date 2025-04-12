@@ -90,12 +90,12 @@ function Search() {
         <div className="search-results">
           {searchQuery.length >= 2 && searchResults.length === 0 ? (
             <div className="no-results">
-              No products found for "{searchQuery}"
+              No products found for &quot;{searchQuery}&quot;
             </div>
           ) : searchQuery.length >= 2 ? (
             <>
               <div className="results-count">
-                Found {searchResults.length} results for "{searchQuery}"
+                Found {searchResults.length} results for &quot;{searchQuery}&quot;
               </div>
               <div className="results-list">
                 {searchResults.map((product) => (

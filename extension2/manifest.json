@@ -1,0 +1,27 @@
+﻿{
+  "manifest_version": 3,
+  "name": "EcoSmart Shopping Assistant",
+  "version": "1.0",
+  "description": "AI-powered shopping assistant for eco-friendly product recommendations",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:8000/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.amazon.in/*", "*://*.amazon.com/*"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}

@@ -1,0 +1,66 @@
+#eco-widget {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+#logo {
+    width: 70px;
+    height: 70px;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+#recommendation {
+    position: absolute;
+    top: 110px;
+    right: 0px;
+    width: 300px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    display: none;
+    z-index: 9999;
+}
+
+#recommendation img {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+}
+
+#recommendation h3 {
+    margin: 10px 0 5px;
+    font-size: 16px;
+}
+
+#recommendation p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+#recommendation button {
+    background: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+#recommendation button:hover {
+    background: #218838;
+}

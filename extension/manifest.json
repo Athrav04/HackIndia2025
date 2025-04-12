@@ -1,0 +1,38 @@
+{
+	"manifest_version": 3,
+	"name": "Eco Alternatives",
+	"version": "1.0",
+	"description": "Suggest some eco-friendly alternatives to everyday products that we use.",
+	"permissions": ["activeTab", "storage", "scripting","cookies"],
+	"background": {
+	  "service_worker": "background.js",
+	  "type": "module"
+	},
+	"host_permissions": ["<all_urls>", "https://*.pexels.com/*", "https://images.pexels.com/*","http://localhost:3000/*","http://localhost:8000/*"],
+	"action": {
+	  "default_popup": "index.html",
+		"default_icon": {
+			"16":"SustainWise.png",
+			"48":"SustainWise.png",
+			"128":"SustainWise.png"
+		}
+	},
+	"content_scripts":[
+		{
+			"matches": ["<all_urls>"],
+			"js": ["content.js"],
+			"css": ["content.css"],
+			"run_at": "document_end"
+		}
+	],
+	"web_accessible_resources": [{
+		"resources": [
+			"icons/*",
+			"images/*",
+			"*.png",
+			"*.svg"
+		],
+		"matches": ["<all_urls>"]
+	}]
+  }
+  

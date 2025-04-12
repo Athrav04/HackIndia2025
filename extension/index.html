@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco-Friendly Picks</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌍 Eco-Friendly Picks</h1>
+            <p>Your daily dose of sustainable shopping made simple!</p>
+        </header>
+
+        <nav>
+            <button id="homeBtn"><i class="fas fa-home"></i> Home</button>
+            <button id="featuresBtn"><i class="fas fa-star"></i> Features</button>
+            <button id="productsBtn"><i class="fas fa-shopping-bag"></i> Products</button>
+            <button id="signupBtn"><i class="fas fa-user-plus"></i> Sign Up</button>
+        </nav>
+
+        <main id="content">
+            <section id="home">
+                <div class="feature-card">
+                    <h2>Welcome to Eco-Friendly Picks! 🌿</h2>
+                    <p>Transform your shopping habits with our smart browser extension that helps you make sustainable choices.</p>
+                    <button class="discover-btn">Start Your Green Journey</button>
+                </div>
+
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <div class="stat-number">10K+</div>
+                        <div class="stat-label">Happy Users</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">500+</div>
+                        <div class="stat-label">Eco-Friendly Products</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">1M+</div>
+                        <div class="stat-label">Trees Saved</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">User Satisfaction</div>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <h3><i class="fas fa-leaf"></i> Why Choose Us?</h3>
+                    <p>• Smart product recommendations based on sustainability metrics</p>
+                    <p>• Real-time eco-friendly alternatives while shopping</p>
+                    <p>• Track your environmental impact</p>
+                    <p>• Join a community of conscious shoppers</p>
+                </div>
+
+                <div class="social-proof">
+                    <h3>What Our Users Say</h3>
+                    <p>"This extension has completely changed how I shop online. I love making eco-conscious decisions!"</p>
+                    <p>"Finally, an easy way to shop sustainably without the research hassle!"</p>
+                    <p>"The impact tracking feature is amazing - it really helps me understand my environmental footprint."</p>
+                </div>
+            </section>
+
+            <section id="features" class="hidden">
+                <div class="feature-card">
+                    <h2>Our Amazing Features 🌟</h2>
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-search"></i>
+                            <h3>Smart Search</h3>
+                            <p>Find eco-friendly alternatives instantly while shopping</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Impact Tracking</h3>
+                            <p>Monitor your environmental impact over time</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-users"></i>
+                            <h3>Community</h3>
+                            <p>Connect with other eco-conscious shoppers</p>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-award"></i>
+                            <h3>Rewards</h3>
+                            <p>Earn points for making sustainable choices</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="products" class="hidden">
+                <div class="feature-card">
+                    <h2>Featured Eco-Friendly Products 🛍️</h2>
+                    <div class="products-grid">
+                        <div class="product-card">
+                            <img src="https://via.placeholder.com/150" alt="Eco Product 1">
+                            <h3>Organic Cotton T-Shirt</h3>
+                            <p>100% organic, fair-trade certified</p>
+                            <button class="product-btn">View Details</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://via.placeholder.com/150" alt="Eco Product 2">
+                            <h3>Bamboo Utensils</h3>
+                            <p>Sustainable, biodegradable</p>
+                            <button class="product-btn">View Details</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="https://via.placeholder.com/150" alt="Eco Product 3">
+                            <h3>Reusable Water Bottle</h3>
+                            <p>Made from recycled materials</p>
+                            <button class="product-btn">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="signup" class="hidden">
+                <div class="feature-card">
+                    <h2>Join Our Green Community 🌱</h2>
+                    <p>Be part of the sustainable shopping revolution!</p>
+                    <form id="signupForm">
+                        <input type="text" name="name" placeholder="Full Name" required>
+                        <input type="email" name="email" placeholder="Email Address" required>
+                        <input type="password" name="password" placeholder="Password" required>
+                        <div class="form-checkbox">
+                            <input type="checkbox" id="terms" required>
+                            <label for="terms">I agree to the Terms and Conditions</label>
+                        </div>
+                        <button type="submit">
+                            <i class="fas fa-user-plus"></i> Create Account
+                        </button>
+                    </form>
+                    <p style="margin-top: 15px; font-size: 0.9em;">
+                        Already have an account? <a href="#" style="color: var(--primary-color);">Sign In</a>
+                    </p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
